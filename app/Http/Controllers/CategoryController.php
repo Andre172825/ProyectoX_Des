@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class RegionController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,10 +13,10 @@ class RegionController extends Controller
      */
     public function index()
     {
-        $Region = DB::table('Region')->get();
+        $Category = DB::table('Category')->get();
 
-        return view ('Region.index',[
-            'Region' => $Region
+        return view ('Category.index',[
+            'Category' => $Category
         ]);
     }
 
@@ -27,7 +27,7 @@ class RegionController extends Controller
      */
     public function create()
     {
-        
+        //
     }
 
     /**
@@ -49,10 +49,10 @@ class RegionController extends Controller
      */
     public function show($id)
     {
-        $Region = DB::table('Region')->where('Id','=',$id) -> first();
+        $Category = DB::table('Category')->where('Id','=',$id) -> first();
 
-        return view ('Region.show',[
-            'Region'=> $Region
+        return view ('Category.show',[
+            'Category'=> $Category
         ]);
     }
 
