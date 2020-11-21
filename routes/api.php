@@ -33,25 +33,25 @@ Route::get('deletedoctype/{id?}', [DocumenttypeController::class, 'deleteDocType
 //CategoryController
 Route::get('category', [CategoryController::class, 'getCategory']);
 Route::get('category/{id?}', [CategoryController::class, 'selCategory']);
-Route::post('savecategory', [DocumenttypeController::class, 'saveCategory']);
+Route::post('savecategory', [CategoryController::class, 'saveCategory']);
 Route::get('deletecategory/{id?}', [CategoryController::class, 'deleteCategory']);
 
 //DistrictController
 Route::get('district', [DistrictController::class, 'getDistrict']);
 Route::get('district/{id?}', [DistrictController::class, 'selDistrict']);
-Route::post('savedistrict', [DocumenttypeController::class, 'saveDistrict']);
+Route::post('savedistrict', [DistrictController::class, 'saveDistrict']);
 Route::get('deletedistrict/{id?}', [DistrictController::class, 'deleteDistrict']);
 
 //OccupationController
 Route::get('occupation', [OccupationController::class, 'getOccupation']);
 Route::get('occupation/{id?}', [OccupationController::class, 'selOccupation']);
-Route::post('saveoccupation', [DocumenttypeController::class, 'saveOccupation']);
+Route::post('saveoccupation', [OccupationController::class, 'saveOccupation']);
 Route::get('deleteoccupation/{id?}', [OccupationController::class, 'deleteOccupation']);
 
 //ProvinceController
 Route::get('province', [ProvinceController::class, 'getProvince']);
 Route::get('province/{id?}', [ProvinceController::class, 'selProvince']);
-Route::post('saveprovince', [DocumenttypeController::class, 'saveProvince']);
+Route::post('saveprovince', [ProvinceController::class, 'saveProvince']);
 Route::get('deleteprovince/{id?}', [ProvinceController::class, 'deleteProvince']);
 
 //RegionController
