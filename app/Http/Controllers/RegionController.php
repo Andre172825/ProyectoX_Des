@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class RegionController extends Controller
 {
@@ -32,5 +33,14 @@ class RegionController extends Controller
         return $Region;
     }
 
+    public function updateRegion($id, Request $request){
+        $Region = DB::table('region')       ->where('id','=',$id)
+                                            ->update(array(
+                                                'regionCode' => $request->input ('regionCode'),
+                                                'description' => $request->input ('description'),
+        ));
+        return $Region;
+    }
+    
 
 }

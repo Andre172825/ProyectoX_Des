@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class DistrictController extends Controller
 {
@@ -32,4 +33,17 @@ class DistrictController extends Controller
         $District = DB::table('district')->where('id','=',$id) -> delete();
         return $District;
     }
+
+    public function updateDistrict($id, Request $request){
+        $District = DB::table('district')   ->where('id','=',$id)
+                                            ->update(array(
+                                                'districtCode' => $request->input ('districtCode'),
+                                                'idRegion' => $request->input ('idRegion'),
+                                                'idProvince' => $request->input ('idProvince'),
+                                                'description' => $request->input ('description'),        
+        ));
+        return $District;
+    }
+
+
 }

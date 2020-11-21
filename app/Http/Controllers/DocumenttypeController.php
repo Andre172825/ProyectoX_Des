@@ -34,4 +34,15 @@ class DocumenttypeController extends Controller
         return $DocType;
     }
 
+    public function updateDocType($id, Request $request){
+        $DocType = DB::table('documenttype')    ->where('id','=',$id)
+                                                ->update(array(
+                                                    'documentCode' => $request->input ('documentCode'),
+                                                    'description' => $request->input ('description'),
+                                                    'status' => $request->input ('status'),
+        ));
+        return $DocType;
+    }
+    
+
 }

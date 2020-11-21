@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class OccupationController extends Controller
 {
@@ -30,7 +31,15 @@ class OccupationController extends Controller
         $Occupation = DB::table('occupation')->where('id','=',$id) -> delete();
         return $Occupation;
     }
-
-
+    
+    public function updateOccupation($id, Request $request){
+        $Occupation = DB::table('occupation')    ->where('id','=',$id)
+                                                 ->update(array(
+                                                    'idCategory' => $request->input ('idCategory'),
+                                                    'description' => $request->input ('description'),
+        ));
+        return $Occupation;
+    }
+    
 
 }

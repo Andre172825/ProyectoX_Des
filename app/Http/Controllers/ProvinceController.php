@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class ProvinceController extends Controller
 {
@@ -33,5 +34,15 @@ class ProvinceController extends Controller
         return $Province;
     }
 
+    public function updateProvince($id, Request $request){
+        $Province = DB::table('province')       ->where('id','=',$id)
+                                                ->update(array(
+                                                    'provinceCode' => $request->input ('provinceCode'),
+                                                    'idRegion' => $request->input ('description'),
+                                                    'description' => $request->input ('description'),
+        ));
+        return $Province;
+    }
+    
 
 }

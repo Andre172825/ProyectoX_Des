@@ -36,5 +36,15 @@ class UserAreaController extends Controller
         return $UserArea;
     }
 
+    public function updateUserArea($id, Request $request){
+        $UserArea = DB::table('userarea')   ->where('id','=',$id)
+                                            ->update(array(
+                                                'idOccupation' => $request->input ('idOccupation'),
+                                                'description' => $request->input ('description'),
+                                                'status' => $request->input ('status'),
+        ));
+        return $UserArea;
+    }
+   
 
 }
